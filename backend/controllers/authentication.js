@@ -21,6 +21,10 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/profile', async (req, res) => {
+    res.json(req.currentUser)
+})
+
+/* router.get('/profile', async (req, res) => {
     try {
         let user = await User.findOne({
             where: {
@@ -32,6 +36,6 @@ router.get('/profile', async (req, res) => {
         res.json(null)
     }
 })
-
+ */
 
 module.exports = router
