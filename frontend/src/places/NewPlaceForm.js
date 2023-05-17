@@ -16,13 +16,13 @@ function NewPlaceForm() {
 	async function handleSubmit(e) {
 		e.preventDefault()
 
-		await fetch(`http://localhost:5000/places`, {
+		await fetch(`http://localhost:5001/places`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(place)
-		})
+		}).catch(err => console.log(err))
 
 		history.push('/places')
 	}
